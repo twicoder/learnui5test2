@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+
+		<script src="resources/sap-ui-core.js" id="sap-ui-bootstrap" data-sap-ui-libs="sap.m" data-sap-ui-theme="sap_belize"></script>
+		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+
+		<script>
+/* 				sap.ui.localResources("learnui52");
+				var app = new sap.m.App({initialPage:"firstPage"});
+				app.setBackgroundColor("0x667788"); 
+				var page = sap.ui.view({id:"firstPage", viewName:"learnui52.hello", type:sap.ui.core.mvc.ViewType.JS});
+				app.addPage(page);
+				app.placeAt("content"); */
+				
+				
+				sap.ui.localResources("testcomponent");
+				sap.ui.define(['jquery.sap.global', 'sap/ui/core/UIComponent'],
+						function(jQuery, UIComponent) {
+						"use strict";
+
+						var Component = UIComponent.extend("testcomponent.Component", {
+							metadata : {
+								manifest : "json"
+							}
+						});
+						return Component;
+					});
+				
+				var oComponent = sap.ui.component({
+					name: "testcomponent"
+				});
+
+				var oContainer = new sap.ui.core.ComponentContainer({
+					component : oComponent
+				});
+				oContainer.placeAt("content");
+				
+		</script>
+
+	</head>
+	<body class="sapUiBody" role="application">
+		<div id="content"></div>
+	</body>
+</html>
